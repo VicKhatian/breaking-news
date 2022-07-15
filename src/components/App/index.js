@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Articles from "../Articles";
+import Hamburger from "../Hamburger";
 import "./App.css";
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">News</header>
-
+      <Hamburger></Hamburger>
       {articles && <Articles articles={articles}></Articles>}
     </div>
   );
