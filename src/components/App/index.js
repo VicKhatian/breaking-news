@@ -4,7 +4,7 @@ import "./App.css";
 
 function App() {
   const api = `https://gnews.io/api/v4/top-headlines?topic=technology&lang=en&token=${process.env.REACT_APP_APIKEY}`;
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState();
 
   useEffect(() => {
     async function fetchArticles() {

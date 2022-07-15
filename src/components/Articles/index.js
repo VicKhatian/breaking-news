@@ -9,8 +9,11 @@ function Articles({ articles }) {
     <div>
       <div>Articles</div>
       <MainArticle article={articles[0]}></MainArticle>
+      <SecondaryArticle article={articles[1]}></SecondaryArticle>
+      {articles.slice(1).map((article, index) => 
+        <SecondaryArticle key={index} article={article}></SecondaryArticle> 
+      )}
 
-      <SecondaryArticle></SecondaryArticle>
     </div>
   );
 }
