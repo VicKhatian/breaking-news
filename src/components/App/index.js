@@ -18,9 +18,13 @@ function App() {
     fetchArticles();
   }, []);
 
+  function updateArticles(articles) {
+    setArticles(articles);
+  }
+
   return (
     <div className="App">
-      <Header />
+      <Header updateArticles={updateArticles} />
 
       {articles && <Articles articles={articles}></Articles>}
     </div>
