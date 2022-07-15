@@ -21,6 +21,7 @@ function App() {
       const data = await response.json();
 
       setArticles(data.articles);
+      console.log(articles);
     }
 
     fetchArticles();
@@ -32,9 +33,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">News</header>
-      <Hamburger updateQuery={updateQuery}></Hamburger>
       <Header updateArticles={updateArticles} />
+      <Hamburger updateQuery={updateQuery}></Hamburger>
       {articles && <Articles articles={articles}></Articles>}
     </div>
   );

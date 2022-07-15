@@ -1,3 +1,4 @@
+import "./Header.css";
 import React from "react";
 import { useState, useEffect } from "react";
 
@@ -25,7 +26,7 @@ const Header = ({ updateArticles }) => {
   return (
     <div className="header">
       <p className="logo">BREAKING NEWS</p>
-      <div className="inputContainer">
+      <div className="input-container">
         <input
           className="input"
           type="text"
