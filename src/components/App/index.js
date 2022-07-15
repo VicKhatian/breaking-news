@@ -8,9 +8,12 @@ function App() {
   useEffect(() => {
     async function fetchArticles() {
       const response = await fetch(api);
-      const data = response.json();
+      const data = await response.json();
+
       setArticles(data.articles);
     }
+
+    fetchArticles();
   }, []);
 
   return (
