@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Articles from "../Articles";
 import Hamburger from "../Hamburger";
+import Header from "../Header";
 import "./App.css";
 
 function App() {
@@ -25,10 +26,15 @@ function App() {
     fetchArticles();
   }, []);
 
+  function updateArticles(articles) {
+    setArticles(articles);
+  }
+
   return (
     <div className="App">
       <header className="App-header">News</header>
       <Hamburger updateQuery={updateQuery}></Hamburger>
+      <Header updateArticles={updateArticles} />
       {articles && <Articles articles={articles}></Articles>}
     </div>
   );
