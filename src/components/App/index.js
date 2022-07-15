@@ -4,8 +4,15 @@ import Hamburger from "../Hamburger";
 import "./App.css";
 
 function App() {
-  const api = `https://gnews.io/api/v4/top-headlines?topic=technology&lang=en&token=${process.env.REACT_APP_APIKEY}`;
+  const [query, setQuery] = useState("technology");
+
+  const api = `https://gnews.io/api/v4/top-headlines?topic=${query}&lang=en&token=${process.env.REACT_APP_APIKEY}`;
+
   const [articles, setArticles] = useState();
+
+  function updateQuery(text) {
+    setQuery(text);
+  }
 
   useEffect(() => {
     async function fetchArticles() {
@@ -21,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">News</header>
-      <Hamburger></Hamburger>
+      <Hamburger updateQuery={updateQuery}></Hamburger>
       {articles && <Articles articles={articles}></Articles>}
     </div>
   );
