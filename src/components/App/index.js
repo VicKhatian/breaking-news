@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Articles from "../Articles";
 import "./App.css";
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">News</header>
+
+      {articles && <Articles articles={articles}></Articles>}
     </div>
   );
 }
